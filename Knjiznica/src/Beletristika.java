@@ -1,21 +1,25 @@
 
 public class Beletristika extends Knjiga implements Posudba {
 
+	public Beletristika(String ime, int br) {
+		super(ime, br);
+	}
+
 	@Override
 	public void posudi() {
-		// TODO Auto-generated method stub
-
+		if(this.brPrimjeraka > 0)
+			this.brPrimjeraka--;
+		else System.out.println("Knjiga nije dostupna za posudbu");
 	}
 
 	@Override
 	public void vrati() {
-		// TODO Auto-generated method stub
-
+		this.brPrimjeraka++;
 	}
 
 	@Override
 	public void naruci(int br) {
-		// TODO Auto-generated method stub
+		this.brPrimjeraka += br;
 
 	}
 
